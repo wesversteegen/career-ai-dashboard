@@ -5,12 +5,14 @@ import { Card, CardHeader, CardTitle, CardContent, CardAction } from "@/componen
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, TrendingDown, Minus, Target, Send, CalendarCheck, BookmarkCheck } from "lucide-react";
 
-const stats = [
+type Trend = "up" | "down" | "stable";
+
+const stats: { title: string; value: string; description: string; trend: Trend; trendValue: string; icon: typeof Target }[] = [
   {
     title: "Match Rate",
     value: `${user.matchRate}%`,
     description: "vs. 68% last month",
-    trend: "up" as const,
+    trend: "up",
     trendValue: "+5.2%",
     icon: Target,
   },
@@ -18,7 +20,7 @@ const stats = [
     title: "Applications Sent",
     value: user.applicationsSent.toString(),
     description: "across 12 companies",
-    trend: "up" as const,
+    trend: "up",
     trendValue: "+12",
     icon: Send,
   },
@@ -26,7 +28,7 @@ const stats = [
     title: "Interviews",
     value: user.interviews.toString(),
     description: "2 this week",
-    trend: "up" as const,
+    trend: "up",
     trendValue: "+2",
     icon: CalendarCheck,
   },
@@ -34,7 +36,7 @@ const stats = [
     title: "Saved Jobs",
     value: user.savedJobs.toString(),
     description: "8 new since last week",
-    trend: "stable" as const,
+    trend: "stable",
     trendValue: "0%",
     icon: BookmarkCheck,
   },
