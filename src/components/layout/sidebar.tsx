@@ -19,7 +19,7 @@ interface SidebarProps {
 export function Sidebar({ collapsed, onToggle }: SidebarProps) {
   return (
     <aside className={cn(
-      "flex flex-col h-screen border-r bg-card transition-all duration-300 shrink-0",
+      "hidden md:flex flex-col h-screen border-r bg-card transition-all duration-300 shrink-0",
       collapsed ? "w-[60px]" : "w-[240px]"
     )}>
       {/* Logo */}

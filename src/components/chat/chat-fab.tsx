@@ -15,7 +15,7 @@ export function ChatFab({ onOpenChat, isVisible }: ChatFabProps) {
     <Button
       onClick={onOpenChat}
       size="icon"
-      className="fixed bottom-6 right-6 size-12 rounded-full shadow-lg"
+      className="fixed bottom-4 right-4 md:bottom-6 md:right-6 size-12 rounded-full shadow-lg z-50"
       style={{ animation: "pulse-glow 2s ease-in-out infinite" }}
     >
       <Sparkles />
